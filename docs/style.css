@@ -1,0 +1,290 @@
+/*reset*/
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+/*end reset*/
+
+:root {
+  --light-blue: #66bfbf;
+  --darker-blue: #11999e;
+  --off-white: #eaf6f6;
+}
+
+body {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.1rem;
+}
+
+h1 {
+  font-family: "Dancing Script", cursive;
+  font-size: 4rem;
+  color: var(--off-white);
+}
+
+h2 {
+  color: var(--darker-blue);
+  margin-bottom: 10px;
+}
+
+button,
+input {
+  cursor: pointer;
+}
+
+button {
+  color: var(--darker-blue);
+  font-size: 1.1rem;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.main-header {
+  height: 20vh;
+  margin-bottom: 5vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--darker-blue);
+}
+
+.search {
+  margin-bottom: 20px;
+}
+
+.search-input {
+  font-size: 1.1rem;
+  outline: none;
+}
+
+.container {
+  width: 70vw;
+  margin: auto;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: var(--light-blue);
+}
+
+.recipe-container {
+  margin-bottom: 20px;
+}
+
+.recipe-container-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-card {
+  margin-bottom: 10px;
+  padding: 5px;
+  border: 2px solid #66bfbf;
+  border-radius: 5px;
+  color: var(--darker-blue);
+  background-color: var(--off-white);
+}
+
+.recipe-card:hover {
+  cursor: pointer;
+  border: 2px solid #11999e;
+}
+
+.recipe-card:active {
+  transform: scale(0.97);
+}
+
+.add-recipe-btn {
+  border: 2px solid #66bfbf;
+}
+
+.add-recipe-btn:hover {
+  border: 2px solid #11999e;
+}
+
+.add-recipe-btn:active {
+  transform: scale(0.95);
+}
+
+.modal-container {
+  position: fixed;
+  opacity: 0;
+  pointer-events: none;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  /*change below to show/hide modal*/
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.2s;
+}
+
+.modal-container-inner {
+  background-color: var(--darker-blue);
+  max-height: 100vh;
+  width: 60%;
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.recipe-title {
+  font-size: 1.1rem;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 5px;
+}
+
+.recipe-instructions {
+  font-size: 1.1rem;
+  outline: none;
+  padding: 5px;
+}
+
+.ingredients-container-header {
+  margin-top: 20px;
+  color: var(--off-white);
+}
+
+.ingredients-container-inner {
+  height: 120px;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.ingredient-card {
+  background-color: var(--light-blue);
+  color: var(--off-white);
+  font-size: 1.3rem;
+  height: 40px;
+  margin: 0 2px 2px 0;
+  border-radius: 5px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.ingredient-card button {
+  padding: 0;
+  padding: 0 2px 0 2px;
+}
+
+.add-ingredient {
+  margin: 20px 0 20px 0;
+}
+
+.add-ingredient-input {
+  font-size: 1.1rem;
+  outline: none;
+  padding: 5px;
+  margin-bottom: 2px;
+}
+
+.bottom-row {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.delete-recipe {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-btn {
+  height: 33px;
+  background-color: var(--off-white);
+  border: 2px solid #eaf6f6;
+  padding: 4px;
+}
+
+.modal-btn:hover {
+  border: 2px solid #03f7ff;
+}
+
+.modal-btn:active {
+  transform: scale(0.95);
+}
+
+.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.no-recipes-mssg {
+  font-size: 1.5rem;
+  color: var(--off-white);
+}
+
+@media screen and (max-width: 800px) {
+  h1 {
+    font-size: 2.7rem;
+  }
+
+  .search-input {
+    width: 100%;
+  }
+
+  .modal-container-inner {
+    width: 100vw;
+    height: 100vh;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .bottom-row {
+    margin-top: 10px;
+    flex-direction: column;
+  }
+
+  .add-ingredient,
+  .add-ingredient-input,
+  .add-ingredient-btn,
+  .close-modal-btn,
+  .delete-recipe,
+  .delete-recipe-btn {
+    width: 100%;
+  }
+}
